@@ -16,7 +16,6 @@
 | Front-End Styling | Bootstrap 5 (CDN) |
 | Icons | Font Awesome 6 (CDN) |
 | Alert & Konfirmasi | SweetAlert2 (CDN) |
-| Server | Apache / Nginx (Linux) |
 | Bahasa Antarmuka | Indonesia |
 
 ---
