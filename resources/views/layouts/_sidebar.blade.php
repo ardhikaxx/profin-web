@@ -4,7 +4,7 @@
             <i class="fas fa-leaf fs-5"></i>
         </div>
         <div>
-            <h1 class="brand-name">UD. SBT</h1>
+            <h1 class="brand-name">UD. Sumber Bawang Timur</h1>
             <span class="brand-sub">Sistem Terintegrasi</span>
         </div>
     </div>
