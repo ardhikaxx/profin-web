@@ -88,6 +88,11 @@
             </tbody>
         </table>
     </div>
+    @if($stoks->hasPages())
+    <div class="card-footer bg-white py-3">
+        {{ $stoks->links() }}
+    </div>
+    @endif
 </div>
 
 <!-- Modal Kurangi Stok (Barang Keluar) -->
@@ -105,7 +110,7 @@
                         <label class="form-label small fw-semibold">Pilih Produk <span class="text-danger">*</span></label>
                         <select name="produk_id" class="form-select" required>
                             <option value="">-- pilih produk --</option>
-                            @foreach($stoks as $s)
+                            @foreach($allStoks as $s)
                                 <option value="{{ $s->produk_id }}">{{ $s->produk->nama_produk ?? '-' }} (Stok: {{ $s->jumlah_stok }})</option>
                             @endforeach
                         </select>
@@ -143,7 +148,7 @@
                         <label class="form-label small fw-semibold">Pilih Produk <span class="text-danger">*</span></label>
                         <select name="produk_id" class="form-select" required>
                             <option value="">-- pilih produk --</option>
-                            @foreach($stoks as $s)
+                            @foreach($allStoks as $s)
                                 <option value="{{ $s->produk_id }}">{{ $s->produk->nama_produk ?? '-' }} (Sistem: {{ $s->jumlah_stok }})</option>
                             @endforeach
                         </select>

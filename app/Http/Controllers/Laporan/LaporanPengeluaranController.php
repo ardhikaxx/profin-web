@@ -17,7 +17,7 @@ class LaporanPengeluaranController extends Controller
 
     public function index(Request $request)
     {
-        $res = $this->laporanService->getLaporanPengeluaran($request);
+        $res = $this->laporanService->getLaporanPengeluaran($request, true);
         $kategoris = KategoriPengeluaran::orderBy('nama_kategori')->get();
 
         return view('laporan.pengeluaran', array_merge($res, compact('kategoris')));

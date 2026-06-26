@@ -16,15 +16,16 @@ class StokController extends Controller
 
     public function index()
     {
-        $stoks = Stok::with(['produk.satuan'])->get();
+        $allStoks = Stok::with(['produk.satuan'])->get();
         
-        $totalProduk = $stoks->count();
-        $stokNormal  = $stoks->filter(fn($s) => $s->jumlah_stok > ($s->produk->stok_minimum ?? 0))->count();
-        $stokKritis  = $stoks->filter(fn($s) => $s->jumlah_stok <= ($s->produk->stok_minimum ?? 0))->count();
+        $totalProduk = $allStoks->count();
+        $stokNormal  = $allStoks->filter(fn($s) => $s->jumlah_stok > ($s->produk->stok_minimum ?? 0))->count();
+        $stokKritis  = $allStoks->filter(fn($s) => $s->jumlah_stok <= ($s->produk->stok_minimum ?? 0))->count();
 
+        $stoks = Stok::with(['produk.satuan'])->paginate(10);
         $produks = Produk::where('is_active', true)->orderBy('nama_produk')->get();
 
-        return view('stok.index', compact('stoks', 'totalProduk', 'stokNormal', 'stokKritis', 'produks'));
+        return view('stok.index', compact('stoks', 'allStoks', 'totalProduk', 'stokNormal', 'stokKritis', 'produks'));
     }
 
     public function histori(Request $request)

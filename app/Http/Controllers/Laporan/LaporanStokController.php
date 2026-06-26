@@ -17,7 +17,7 @@ class LaporanStokController extends Controller
 
     public function index(Request $request)
     {
-        $res = $this->laporanService->getLaporanStok($request);
+        $res = $this->laporanService->getLaporanStok($request, true);
         $produks = Produk::orderBy('nama_produk')->get();
 
         return view('laporan.stok', array_merge($res, compact('produks')));

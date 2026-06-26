@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class LaporanService
 {
-    public function getLaporanProduksi(Request $request)
+    public function getLaporanProduksi(Request $request, bool $paginate = false)
     {
         $query = Produksi::with(['produk', 'satuan', 'karyawan']);
 
@@ -31,18 +31,21 @@ class LaporanService
             $query->where('karyawan_id', $request->karyawan_id);
         }
 
-        $data = $query->orderBy('tanggal_produksi', 'desc')->get();
+        $query->orderBy('tanggal_produksi', 'desc');
+        $allData = (clone $query)->get();
 
         $summary = [
-            'total_produksi' => $data->sum('jumlah_produksi'),
-            'total_gagal'    => $data->sum('jumlah_gagal'),
-            'total_bersih'   => $data->sum('jumlah_bersih'),
+            'total_produksi' => $allData->sum('jumlah_produksi'),
+            'total_gagal'    => $allData->sum('jumlah_gagal'),
+            'total_bersih'   => $allData->sum('jumlah_bersih'),
         ];
+
+        $data = $paginate ? $query->paginate(10)->withQueryString() : $allData;
 
         return compact('data', 'summary');
     }
 
-    public function getLaporanStok(Request $request)
+    public function getLaporanStok(Request $request, bool $paginate = false)
     {
         $query = Stok::with(['produk.satuan']);
 
@@ -62,12 +65,12 @@ class LaporanService
             $query->where('produk_id', $request->produk_id);
         }
 
-        $data = $query->get();
+        $data = $paginate ? $query->paginate(10)->withQueryString() : $query->get();
 
         return compact('data');
     }
 
-    public function getLaporanPengeluaran(Request $request)
+    public function getLaporanPengeluaran(Request $request, bool $paginate = false)
     {
         $query = Pengeluaran::with(['kategori', 'karyawan']);
 
@@ -79,11 +82,14 @@ class LaporanService
             $query->where('kategori_pengeluaran_id', $request->kategori_id);
         }
 
-        $data = $query->orderBy('tanggal_pengeluaran', 'desc')->get();
+        $query->orderBy('tanggal_pengeluaran', 'desc');
+        $allData = (clone $query)->get();
 
         $summary = [
-            'total_pengeluaran' => $data->sum('jumlah'),
+            'total_pengeluaran' => $allData->sum('jumlah'),
         ];
+
+        $data = $paginate ? $query->paginate(10)->withQueryString() : $allData;
 
         return compact('data', 'summary');
     }

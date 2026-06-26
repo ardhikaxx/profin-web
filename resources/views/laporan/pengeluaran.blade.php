@@ -88,5 +88,10 @@
             </tbody>
         </table>
     </div>
+    @if($data->hasPages())
+    <div class="card-footer bg-white py-3">
+        {{ $data->links() }}
+    </div>
+    @endif
 </div>
 @endsection

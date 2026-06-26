@@ -18,7 +18,7 @@ class LaporanProduksiController extends Controller
 
     public function index(Request $request)
     {
-        $res = $this->laporanService->getLaporanProduksi($request);
+        $res = $this->laporanService->getLaporanProduksi($request, true);
         $produks   = Produk::orderBy('nama_produk')->get();
         $karyawans = User::where('role', 'karyawan')->orderBy('name')->get();
 
