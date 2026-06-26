@@ -55,7 +55,7 @@
                     <th>Bersih (Masuk Gudang)</th>
                     <th>Operator</th>
                     <th>Status</th>
-                    <th class="text-center" style="width: 140px;">Aksi</th>
+                    <th class="text-center text-nowrap" style="width: 160px;">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -75,20 +75,26 @@
                             <span class="badge bg-success"><i class="fas fa-check-circle me-1"></i> Terverifikasi</span>
                         @endif
                     </td>
-                    <td class="text-center">
-                        <a href="{{ route('produksi.show', $item->id) }}" class="btn btn-sm btn-outline-info me-1" title="Detail"><i class="fas fa-eye"></i></a>
-                        @if($item->status === 'draft' || auth()->user()->role === 'owner')
-                            <a href="{{ route('produksi.edit', $item->id) }}" class="btn btn-sm btn-outline-warning me-1" title="Edit"><i class="fas fa-edit"></i></a>
-                        @endif
+                    <td class="text-center text-nowrap">
+                        <div class="btn-group btn-group-sm shadow-sm" role="group">
+                            <a href="{{ route('produksi.show', $item->id) }}" class="btn btn-outline-info" title="Detail"><i class="fas fa-eye"></i></a>
+                            @if($item->status === 'draft' || auth()->user()->role === 'owner')
+                                <a href="{{ route('produksi.edit', $item->id) }}" class="btn btn-outline-warning" title="Edit"><i class="fas fa-edit"></i></a>
+                            @endif
+                            @if(auth()->user()->role === 'owner')
+                                @if($item->status === 'draft')
+                                    <button type="button" class="btn btn-success" onclick="verifikasiForm('ver-prd-{{ $item->id }}')" title="Verifikasi"><i class="fas fa-check"></i></button>
+                                @endif
+                                <button type="button" class="btn btn-outline-danger" onclick="hapusForm('del-prd-{{ $item->id }}')" title="Hapus"><i class="fas fa-trash"></i></button>
+                            @endif
+                        </div>
                         @if(auth()->user()->role === 'owner')
                             @if($item->status === 'draft')
-                            <button type="button" class="btn btn-sm btn-success me-1" onclick="verifikasiForm('ver-prd-{{ $item->id }}')" title="Verifikasi"><i class="fas fa-check"></i></button>
                             <form id="ver-prd-{{ $item->id }}" action="{{ route('produksi.verifikasi', $item->id) }}" method="POST" class="d-none">
                                 @csrf
                                 @method('PATCH')
                             </form>
                             @endif
-                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="hapusForm('del-prd-{{ $item->id }}')" title="Hapus"><i class="fas fa-trash"></i></button>
                             <form id="del-prd-{{ $item->id }}" action="{{ route('produksi.destroy', $item->id) }}" method="POST" class="d-none">
                                 @csrf
                                 @method('DELETE')
