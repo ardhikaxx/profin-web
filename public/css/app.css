@@ -192,9 +192,14 @@ body {
 }
 
 /* Dropdowns & List Groups */
-.dropdown-item.active, .dropdown-item:active {
-    background-color: var(--color-primary) !important;
-    color: #ffffff !important;
+.dropdown-item:hover, .dropdown-item:focus, .dropdown-item.active, .dropdown-item:active {
+    background-color: rgba(27, 94, 32, 0.15) !important;
+    color: #000000 !important;
+}
+.dropdown-item:hover .text-dark, .dropdown-item:focus .text-dark, .dropdown-item:active .text-dark, .dropdown-item.active .text-dark,
+.dropdown-item:hover .text-muted, .dropdown-item:focus .text-muted, .dropdown-item:active .text-muted, .dropdown-item.active .text-muted,
+.dropdown-item:hover .text-secondary, .dropdown-item:focus .text-secondary, .dropdown-item:active .text-secondary, .dropdown-item.active .text-secondary {
+    color: #000000 !important;
 }
 .list-group-item.active {
     background-color: var(--color-primary) !important;
