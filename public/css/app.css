@@ -502,12 +502,12 @@ footer.footer {
 /* =========================================================
    WARNING / YELLOW ACCENT OVERRIDES (WHITE TEXT ENFORCEMENT)
    ========================================================= */
-.bg-warning,
+.bg-warning:not([class*="bg-opacity-"]),
 .btn-warning,
 .badge.bg-warning,
 .modal-header.bg-warning,
 .alert-warning,
-.bg-warning.text-dark,
+.bg-warning.text-dark:not([class*="bg-opacity-"]),
 .btn-warning.text-dark,
 span.bg-warning {
     background-color: var(--color-warning) !important;
@@ -542,7 +542,7 @@ span.bg-warning {
 /* =========================================================
    INFO TO SECONDARY COLOR REPLACEMENT
    ========================================================= */
-.bg-info,
+.bg-info:not([class*="bg-opacity-"]),
 .badge.bg-info,
 .alert-info {
     background-color: #6C757D !important;

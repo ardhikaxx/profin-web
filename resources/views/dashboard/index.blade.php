@@ -45,7 +45,7 @@
                             <small class="text-success"><i class="fas fa-check me-1"></i> Stok aman</small>
                         @endif
                     </div>
-                    <div class="stat-icon bg-info bg-opacity-10 text-info">
+                    <div class="stat-icon bg-secondary bg-opacity-10 text-secondary">
                         <i class="fas fa-boxes-stacked fa-lg"></i>
                     </div>
                 </div>
