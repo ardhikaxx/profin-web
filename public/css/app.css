@@ -241,9 +241,11 @@ body {
 }
 
 .sidebar .brand-sub {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 10.5px;
+    line-height: 1.25;
     display: block;
+    margin-top: 2px;
 }
 
 .sidebar .user-info {

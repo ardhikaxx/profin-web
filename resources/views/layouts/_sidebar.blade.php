@@ -5,7 +5,7 @@
         </div>
         <div class="overflow-hidden">
             <h1 class="brand-name text-truncate mb-0" title="UD. Sumber Bawang Timur">UD. Sumber Bawang Timur</h1>
-            <span class="brand-sub text-truncate">Sistem Terintegrasi</span>
+            <span class="brand-sub">Production and Financial Information System</span>
         </div>
     </div>
 
