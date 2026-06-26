@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         // 1. Seed Users (Owner & Karyawan)
         $owner = User::create([
-            'name'      => 'admin',
-            'username'  => 'admin',
-            'email'     => 'admin@gmail.com',
+            'name'      => 'Owner Sumber Bawang',
+            'username'  => 'owner',
+            'email'     => 'owner@gmail.com',
             'password'  => Hash::make('bawang'),
             'role'      => 'owner',
             'is_active' => true,

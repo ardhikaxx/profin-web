@@ -139,7 +139,7 @@ Gunakan kredensial berikut untuk masuk ke dalam sistem setelah melakukan proses 
 
 | Role | Username | Email | Password | Keterangan |
 |---|---|---|---|---|
-| **Owner** | `admin` | `admin@gmail.com` | `bawang` | Akses penuh seluruh modul, verifikasi, laporan, dan master data |
+| **Owner** | `owner` | `owner@gmail.com` | `bawang` | Akses penuh seluruh modul, verifikasi, laporan, dan master data |
 | **Karyawan** | `ahmad_prod` | `ahmad@gmail.com` | `bawang` | Input produksi dan pengeluaran harian |
 | **Karyawan** | `siti_admin` | `siti@gmail.com` | `bawang` | Input produksi dan pengeluaran harian |
 
