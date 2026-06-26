@@ -1,13 +1,11 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="auth-card p-4 p-md-5">
-    <div class="text-center mb-4">
-        <div class="bg-primary-light text-primary rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 64px; height: 64px;">
-            <i class="fas fa-industry fa-2x"></i>
-        </div>
-        <h4 class="fw-bold mb-1" style="color: var(--color-primary-dark);">UD. SUMBER BAWANG TIMUR</h4>
-        <p class="text-muted small mb-0">Sistem Produksi & Keuangan</p>
+<div class="auth-card p-4 p-md-5 shadow-lg border-0 rounded-4 bg-white">
+    <div class="text-center mb-4 pb-1">
+        <img src="{{ asset('favicon.svg') }}" alt="Logo UD Sumber Bawang" style="width: 72px; height: 72px;" class="mb-3">
+        <h4 class="fw-bold mb-1 text-dark tracking-tight" style="font-size: 18px; letter-spacing: -0.3px;">UD. SUMBER BAWANG TIMUR</h4>
+        <p class="text-muted small mb-0">Sistem Informasi Produksi & Keuangan</p>
     </div>
 
     <form method="POST" action="{{ route('login') }}" id="form-login">
@@ -44,13 +42,13 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 py-2 fs-6 fw-bold">
-            <i class="fas fa-sign-in-alt me-2"></i> MASUK KE SISTEM
+        <button type="submit" class="btn btn-primary w-100 py-2.5 fs-6 fw-bold shadow-sm rounded-3 mt-2">
+            MASUK KE SISTEM <i class="fas fa-arrow-right ms-2 small"></i>
         </button>
     </form>
 
     <div class="text-center mt-4 pt-3 border-top">
-        <small class="text-muted" style="font-size: 12px;">&copy; {{ date('Y') }} UD. Sumber Bawang Timur</small>
+        <small class="text-muted" style="font-size: 11.5px;">&copy; {{ date('Y') }} UD. Sumber Bawang Timur. Hak Cipta Dilindungi.</small>
     </div>
 </div>
 @endsection
