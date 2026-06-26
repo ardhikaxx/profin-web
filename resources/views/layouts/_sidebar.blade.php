@@ -1,11 +1,11 @@
 <aside class="sidebar">
     <div class="brand">
-        <div class="bg-primary rounded p-2 text-white d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
-            <i class="fas fa-leaf fs-5"></i>
+        <div class="bg-primary rounded p-2 text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+            <i class="fas fa-leaf fs-6"></i>
         </div>
-        <div>
-            <h1 class="brand-name">UD. Sumber Bawang Timur</h1>
-            <span class="brand-sub">Sistem Terintegrasi</span>
+        <div class="overflow-hidden">
+            <h1 class="brand-name text-truncate mb-0" title="UD. Sumber Bawang Timur">UD. Sumber Bawang Timur</h1>
+            <span class="brand-sub text-truncate">Sistem Terintegrasi</span>
         </div>
     </div>
 
