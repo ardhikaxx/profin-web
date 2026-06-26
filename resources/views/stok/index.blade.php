@@ -24,7 +24,7 @@
         <div class="card stat-card h-100 mb-0">
             <div class="card-body p-3">
                 <p class="text-muted small mb-1">Total Jenis Produk</p>
-                <h3 class="fw-bold mb-0">{{ number_format($totalProduk, 0, ',', '.') }} <small class="fs-6 text-muted">SKU</small></h3>
+                <h3 class="fw-bold mb-0">{{ number_format($totalProduk, 0, ',', '.') }} <small class="fs-6 text-muted">Varian</small></h3>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="card stat-card border-success h-100 mb-0" style="border-left-color: var(--color-success) !important;">
             <div class="card-body p-3">
                 <p class="text-muted small mb-1">Stok Kondisi Aman</p>
-                <h3 class="fw-bold mb-0 text-success">{{ number_format($stokNormal, 0, ',', '.') }} <small class="fs-6 text-muted">SKU</small></h3>
+                <h3 class="fw-bold mb-0 text-success">{{ number_format($stokNormal, 0, ',', '.') }} <small class="fs-6 text-muted">Varian</small></h3>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="card stat-card border-danger h-100 mb-0" style="border-left-color: var(--color-danger) !important;">
             <div class="card-body p-3">
                 <p class="text-muted small mb-1">Stok Kritis (< Minimum)</p>
-                <h3 class="fw-bold mb-0 text-danger">{{ number_format($stokKritis, 0, ',', '.') }} <small class="fs-6 text-muted">SKU</small></h3>
+                <h3 class="fw-bold mb-0 text-danger">{{ number_format($stokKritis, 0, ',', '.') }} <small class="fs-6 text-muted">Varian</small></h3>
             </div>
         </div>
     </div>
