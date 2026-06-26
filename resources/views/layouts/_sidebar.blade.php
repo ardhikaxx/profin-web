@@ -9,17 +9,7 @@
         </div>
     </div>
 
-    @auth
-    <div class="user-info">
-        <i class="fas fa-user-circle fs-2 text-white"></i>
-        <div class="overflow-hidden">
-            <p class="user-name text-truncate mb-1">{{ auth()->user()->name }}</p>
-            <span class="user-role role-{{ auth()->user()->role }}">
-                {{ auth()->user()->role }}
-            </span>
-        </div>
-    </div>
-    @endauth
+
 
     <nav class="mt-2 mb-4">
         <div class="menu-label">Menu Utama</div>

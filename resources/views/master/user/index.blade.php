@@ -130,8 +130,8 @@
                                     <p class="small text-muted mb-3">Reset password untuk pengguna <strong>{{ $usr->name }}</strong>.</p>
                                     <div class="mb-3">
                                         <label class="form-label small fw-semibold">Password Baru <span class="text-danger">*</span></label>
-                                        <input type="text" name="password_baru" class="form-control font-monospace" value="sumberbawang123" required>
-                                        <div class="form-text small">Password default: sumberbawang123</div>
+                                        <input type="text" name="password_baru" class="form-control font-monospace" value="sumberbawang" required>
+                                        <div class="form-text small">Password default: sumberbawang</div>
                                     </div>
                                 </div>
                                 <div class="modal-footer bg-light">
