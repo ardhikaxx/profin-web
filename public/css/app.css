@@ -11,7 +11,7 @@
     /* Warna Status */
     --color-success:        #198754;
     --color-danger:         #DC3545;
-    --color-warning:        #D97706;
+    --color-warning:        #6C757D;
     --color-info:           #6C757D;
 
     /* Warna Netral */
@@ -521,8 +521,21 @@ span.bg-warning {
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:active {
-    background-color: #B45309 !important;
-    border-color: #B45309 !important;
+    background-color: #5C636A !important;
+    border-color: #5C636A !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-warning {
+    color: #6C757D !important;
+    border-color: #6C757D !important;
+}
+
+.btn-outline-warning:hover,
+.btn-outline-warning:focus,
+.btn-outline-warning:active {
+    background-color: #6C757D !important;
+    border-color: #6C757D !important;
     color: #ffffff !important;
 }
 
