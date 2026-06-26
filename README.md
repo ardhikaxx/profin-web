@@ -29,7 +29,7 @@
 - **Profil Pengguna**: Pembaruan biodata dan ubah kata sandi secara aman.
 
 ### 2. 📦 Modul Master Data (Khusus Owner)
-- **Master Produk**: Kelola produk jadi agribisnis (Bawang Merah Super, Sedang, Bawang Putih Kating, dll.) beserta harga estimasi dan batas stok minimum.
+- **Master Produk**: Kelola produk jadi agribisnis (Bawang Merah Super, Sedang, Kecil Sortiran C, dll.) beserta harga estimasi dan batas stok minimum.
 - **Master Satuan**: Standarisasi satuan takaran baku (kg, karung, ikat, pack, liter).
 - **Master Kategori Pengeluaran**: Pengelompokan biaya operasional (Bahan Baku, Transportasi, Listrik & Air, Perawatan Alat, dll.).
 - **Manajemen Pengguna**: Tambah, edit, nonaktifkan akun karyawan, serta fitur *Reset Password*.

@@ -89,23 +89,23 @@ class DatabaseSeeder extends Seeder
             'is_active'      => true,
         ]);
 
-        $prodPutihKating = Produk::create([
-            'kode_produk'    => 'BPK-01',
-            'nama_produk'    => 'Bawang Putih Kating Bersih',
+        $prodKecil = Produk::create([
+            'kode_produk'    => 'BMS-03',
+            'nama_produk'    => 'Bawang Merah Kecil Sortiran C',
             'satuan_id'      => $satKg->id,
-            'harga_estimasi' => 42000,
+            'harga_estimasi' => 25000,
             'stok_minimum'   => 100,
-            'deskripsi'      => 'Bawang putih kating siung padat aroma tajam tanpa bonggol kotor.',
+            'deskripsi'      => 'Bawang merah ukuran kecil untuk bumbu olahan siap giling dan rumah makan.',
             'is_active'      => true,
         ]);
 
-        $prodPutihHonan = Produk::create([
-            'kode_produk'    => 'BPH-01',
-            'nama_produk'    => 'Bawang Putih Honan Siung',
-            'satuan_id'      => $satKg->id,
-            'harga_estimasi' => 34000,
+        $prodIkat = Produk::create([
+            'kode_produk'    => 'BMI-01',
+            'nama_produk'    => 'Bawang Merah Ropis Ikat Daun',
+            'satuan_id'      => $satIkat->id,
+            'harga_estimasi' => 18500,
             'stok_minimum'   => 120,
-            'deskripsi'      => 'Bawang putih honan impor siung besar cocok untuk katering dan rumah makan.',
+            'deskripsi'      => 'Bawang merah segar bergagang dengan daun kering tradisi ropis tahan lama.',
             'is_active'      => true,
         ]);
 
@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
 
         // 5. Seed Produksi & Stok Terintegrasi (30 hari terakhir)
         $stokService = app(StokService::class);
-        $produksList = [$prodSuper, $prodSedang, $prodPutihKating, $prodPutihHonan, $prodGoreng];
+        $produksList = [$prodSuper, $prodSedang, $prodKecil, $prodIkat, $prodGoreng];
         $karyawanList = [$karyawan1, $karyawan2, $karyawan3];
 
         $prdCounter = [];
@@ -205,11 +205,11 @@ class DatabaseSeeder extends Seeder
             $stokService->kurangiStok($prodGoreng->id, $kurang, 'Penjualan', null, $owner->id, 'Distribusi pesanan grosir oleh Owner ke Surabaya');
         }
 
-        // Bawang Putih Kating min 100 -> sisa 45
-        $stokKating = Stok::where('produk_id', $prodPutihKating->id)->value('jumlah_stok') ?? 0;
-        if ($stokKating > 45) {
-            $kurang = $stokKating - 45;
-            $stokService->kurangiStok($prodPutihKating->id, $kurang, 'Penjualan', null, $owner->id, 'Pengiriman ke pasar induk Malang');
+        // Bawang Merah Kecil min 100 -> sisa 45
+        $stokKecil = Stok::where('produk_id', $prodKecil->id)->value('jumlah_stok') ?? 0;
+        if ($stokKecil > 45) {
+            $kurang = $stokKecil - 45;
+            $stokService->kurangiStok($prodKecil->id, $kurang, 'Penjualan', null, $owner->id, 'Pengiriman borongan bumbu giling ke pasar induk Surabaya');
         }
 
         // 6. Seed Pengeluaran Operasional (30 hari terakhir)
