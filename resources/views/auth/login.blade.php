@@ -50,7 +50,7 @@
     </form>
 
     <div class="text-center mt-4 pt-3 border-top">
-        <small class="text-muted" style="font-size: 12px;">&copy; 2025 UD. Sumber Bawang Timur</small>
+        <small class="text-muted" style="font-size: 12px;">&copy; {{ date('Y') }} UD. Sumber Bawang Timur</small>
     </div>
 </div>
 @endsection
