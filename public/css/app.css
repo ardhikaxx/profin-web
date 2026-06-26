@@ -12,7 +12,7 @@
     --color-success:        #198754;
     --color-danger:         #DC3545;
     --color-warning:        #D97706;
-    --color-info:           #0DCAF0;
+    --color-info:           #6C757D;
 
     /* Warna Netral */
     --color-sidebar-bg:     #132A1E;
@@ -523,5 +523,39 @@ span.bg-warning {
 .btn-warning:active {
     background-color: #B45309 !important;
     border-color: #B45309 !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   INFO TO SECONDARY COLOR REPLACEMENT
+   ========================================================= */
+.bg-info,
+.badge.bg-info,
+.alert-info {
+    background-color: #6C757D !important;
+    color: #ffffff !important;
+}
+
+.text-info {
+    color: #6C757D !important;
+}
+
+.border-info {
+    border-color: #6C757D !important;
+}
+
+.btn-info,
+.btn-outline-info {
+    border-color: #6C757D !important;
+}
+
+.btn-outline-info {
+    color: #6C757D !important;
+}
+
+.btn-outline-info:hover,
+.btn-outline-info:focus,
+.btn-outline-info:active {
+    background-color: #6C757D !important;
     color: #ffffff !important;
 }
